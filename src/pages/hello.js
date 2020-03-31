@@ -41,8 +41,8 @@ export default class Hello extends React.Component {
       <Layout>
         <SEO title="Hello" />
           <h2> Say Hello</h2>
-          <div style={{  marginBottom: `3rem`, fontSize:`15px`, display:`flex`, justifyContent:`space` }}>
-            <div>
+          <div style={{  marginBottom: `3rem`, fontSize:`15px`, display:`flex`, justifyContent:`space-between` }}>
+            <div style={{maxWidth: `300px`}}>
               <p>We built Superscript because we love typography, and using fonts made our websites and apps slow. We made it open source because we know others are facing the same challenges. If this resonates with you, please say hello!</p>
             </div>
 
@@ -53,6 +53,7 @@ export default class Hello extends React.Component {
                     type="text"
                     name="name"
                     placeholder="Enter your name"
+                    style={{border:`1px solid black`, backgroundColor:`#F7D200`}}
                     value={this.state.name}
                     onChange={this.handleInputChange}
                   />
@@ -62,6 +63,7 @@ export default class Hello extends React.Component {
                     type="text"
                     name="email"
                     placeholder="your@email.address"
+                    style={{border:`1px solid black`, backgroundColor:`#F7D200`, placeholderColor:`#F7D200`}}
                     value={this.state.email}
                     onChange={this.handleInputChange}
                   />
@@ -71,11 +73,12 @@ export default class Hello extends React.Component {
                     type="text"
                     name="message"
                     placeholder="Your message"
+                    style={{border:`1px solid black`, backgroundColor:`#F7D200`}}
                     value={this.state.message}
                     onChange={this.handleInputChange}
                   />
                 </label>
-                <button type="submit">Send</button>
+                <button type="submit" style={{ backgroundColor:`#F7D200`, border:`none`, color:`#00B7F5`}}>Send</button>
               </form>
             </div>  
         </div>
