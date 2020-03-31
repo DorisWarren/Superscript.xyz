@@ -4,11 +4,11 @@ import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-export default class IndexPage extends React.Component {
+export default class Hello extends React.Component {
   state = {
     name: "",
     email: "",
-    note: "",
+    message: "",
   }
 
   handleInputChange = event => {
@@ -22,6 +22,16 @@ export default class IndexPage extends React.Component {
   }
 
   handleSubmit = event => {
+    const fields = {"fields": {"Name": this.state.name, "Email": this.state.email,"Message": this.state.message}}
+    fetch("https://api.airtable.com/v0/appISrTWW4ky3WynU/Table%201", {
+      method: "POST",
+      headers: {"Authorization": `Bearer ${process.env.GATSBY_AIRTABLE_API}`,
+                "Content-Type": "application/json"},
+      body: JSON.stringify(fields)
+    })
+
+    .catch(error => alert(error))
+  
     event.preventDefault()
     alert(`Thank you ${this.state.name}!`)
   }
@@ -31,43 +41,43 @@ export default class IndexPage extends React.Component {
       <Layout>
         <SEO title="Hello" />
           <h2> Say Hello</h2>
-          <div style={{  marginBottom: `3rem`, fontSize:`15px`, display:`flex`, justifyContent:`space-between` }}>
+          <div style={{  marginBottom: `3rem`, fontSize:`15px`, display:`flex`, justifyContent:`space` }}>
             <div>
               <p>We built Superscript because we love typography, and using fonts made our websites and apps slow. We made it open source because we know others are facing the same challenges. If this resonates with you, please say hello!</p>
             </div>
 
-          <div style={{}}>
-            <form onSubmit={this.handleSubmit}>
-              <label>
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  value={this.state.name}
-                  onChange={this.handleInputChange}
-                />
-              </label>
-              <label>
-                Email Address
-                <input
-                  type="text"
-                  name="email"
-                  value={this.state.email}
-                  onChange={this.handleInputChange}
-                />
-              </label>
-              <label> 
-                Your Message
-                <input
-                  type="text"
-                  name="message"
-                  value={this.state.massage}
-                  onChange={this.handleInputChange}
-                />
-              </label>
-              <button type="submit">Send</button>
-            </form>
-          </div>  
+            <div style={{}}>
+              <form onSubmit={this.handleSubmit}>
+                <label>
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter your name"
+                    value={this.state.name}
+                    onChange={this.handleInputChange}
+                  />
+                </label>
+                <label>
+                  <input
+                    type="text"
+                    name="email"
+                    placeholder="your@email.address"
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                  />
+                </label>
+                <label>
+                  <input
+                    type="text"
+                    name="message"
+                    placeholder="Your message"
+                    value={this.state.message}
+                    onChange={this.handleInputChange}
+                  />
+                </label>
+                <button type="submit">Send</button>
+              </form>
+            </div>  
         </div>
       </Layout>
     )
