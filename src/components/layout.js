@@ -10,11 +10,11 @@ import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
 import "./layout.css"
-import logo from "../images/logo.svg"
+import Logo from "../images/logo.svg";
 
 
 
-console.log(logo)
+// console.log(logo)
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -33,9 +33,12 @@ const Layout = ({ children }) => {
     <div className="container">
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="layout">
-        <main style={{paddingBottom:`1rem`}}>{children}</main>
+        <main style={{paddingBottom:`1rem`, lineHeight: `normal`}}>{children}</main>
         <div className="logo-section">
-          <img src={logo} alt="Logo" />
+        <div className="logo-footer">
+          <Logo /> 
+          <p className="one-brand-logo">1BRAND</p>
+        </div>
           <a className="get-it" href="https://github.com/permanencelabs/superscript-xyz">Get it</a>
         </div>
   

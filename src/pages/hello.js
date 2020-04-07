@@ -53,7 +53,7 @@ export default class Hello extends React.Component {
                     type="text"
                     name="name"
                     placeholder="Name"
-                    style={{width: `47%`, paddingLeft: `10px`}}
+                    style={{width: `47%`, height:`30px`, paddingLeft: `10px`}}
                     autoComplete="off"
                     value={this.state.name}
                     onChange={this.handleInputChange}
@@ -64,7 +64,7 @@ export default class Hello extends React.Component {
                     type="text"
                     name="email"
                     placeholder="Email"
-                    style={{width: `48.2%`, paddingLeft: `10px`}}
+                    style={{width: `48.2%`, height:`30px`, paddingLeft: `10px`}}
                     value={this.state.email}
                     onChange={this.handleInputChange}
                   />
