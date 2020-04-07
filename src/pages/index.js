@@ -9,7 +9,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Superscript" />
     <h2>Easy Web Fonts</h2>
-    <p style={{maxWidth: `300px`, marginBottom: `4rem`, fontSize:`15px`}}>Superscript makes it easy to self-host and cache web fonts from any source so your application or website is blazingly fast.</p>
+    <p className="superscript-description">Superscript makes it easy to self-host and cache web fonts from any source so your application or website is blazingly fast.</p>
     
 
   </Layout>

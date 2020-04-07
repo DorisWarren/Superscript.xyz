@@ -8,9 +8,13 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
-
 import Header from "./header"
 import "./layout.css"
+import logo from "../images/logo.svg"
+
+
+
+console.log(logo)
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -23,23 +27,23 @@ const Layout = ({ children }) => {
     }
   `)
 
+
+
   return (
-    <>
+    <div className="container">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <p style={{color:`#CF3E22`,textAlign:`right`, width: `100%`, borderTop:`1px solid black`, padding:`16px`}}>Get it</p>
-        <footer style={{}} >
+      <div className="layout">
+        <main style={{paddingBottom:`1rem`}}>{children}</main>
+        <div className="logo-section">
+          <img src={logo} alt="Logo" />
+          <a className="get-it" href="https://github.com/permanencelabs/superscript-xyz">Get it</a>
+        </div>
+  
+        <footer>
           © {new Date().getFullYear()}
         </footer>
       </div>
-    </>
+    </div>
   )
 }
 
