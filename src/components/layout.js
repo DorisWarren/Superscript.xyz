@@ -33,7 +33,7 @@ const Layout = ({ children }) => {
     <div className="container">
       <Header siteTitle={data.site.siteMetadata.title} />
       <div className="layout">
-        <main style={{paddingBottom:`1rem`, lineHeight: `normal`}}>{children}</main>
+        <main style={{paddingBottom:`1.5rem`, lineHeight: `normal`}}>{children}</main>
         <div className="logo-section">
         <div className="logo-footer">
           <Logo /> 

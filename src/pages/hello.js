@@ -79,7 +79,7 @@ export default class Hello extends React.Component {
                     onChange={this.handleInputChange}
                   />
                 </label>
-                <button type="submit" style={{color: `#00B7F5`, paddingTop:`10px`, fontSize:`17px`, outline:`none`}}>Send</button>
+                <button type="submit" style={{color: `#00B7F5`, padding:`10px 0 0 0 `, fontSize:`17px`, outline:`none`}}>Send</button>
               </form>
             </div>  
         </div>

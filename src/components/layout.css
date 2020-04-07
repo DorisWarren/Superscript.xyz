@@ -106,7 +106,11 @@ a.nav-links:hover{
 
 .logo-footer {
   display: flex;
+}
 
+footer {
+  font-size: 12px;
+  
 }
 input {
   background-color: #F7D200;
