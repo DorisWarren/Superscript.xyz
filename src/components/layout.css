@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow|Roboto+Condensed&display=swap');
+
 html {
   font-family: 'Roboto', sans-serif;
   -ms-text-size-adjust: 100%;
@@ -27,7 +28,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #F7D200;
-  /* border: 1px solid black; */
 }
 
 .layout {
@@ -768,4 +768,39 @@ pre tt:after {
   html {
     font-size: 100%;
   }
+  body {
+    padding:10px;
+    width: 480px;
+}
+.navigation {
+  text-align: center;
+  
+}
+.xyz {
+  padding-left: 40px;
+}
+}
+/* tablet */ 
+@media screen and (max-width: 780px) {
+  .contact-form input {
+    margin: 10px 0;
+  }
+  .email-label {
+    width: 47%;
+    height: 30px;
+    padding-left: 10px;
+    color: black;
+  }
+  
+  .contact-form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .description {
+    padding-right: 10px;
+  }
+  .navigation {
+  text-align: center;
+  
+}
 }
